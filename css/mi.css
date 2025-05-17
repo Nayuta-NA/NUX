@@ -1,0 +1,647 @@
+/* 顶部广告 */
+.header{
+    width: 100%;
+    height: 100px;
+    /* 超出部分隐藏 */
+    overflow: hidden;
+    position: relative;
+}
+/* 面试常见的css问题
+    1.内容居中问题：大盒子里面有个小盒子，如何让小盒子在大盒子中垂直和水平居中（做完好好研究）
+        1.弹性盒子模型
+        2.定位
+        3.表格
+*/
+.header img{
+    width: 100%;
+    height: 100%;
+}
+/* 黑色导航开始 */
+.black-nav{
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    background-color: #333;
+    font-size: 12px;
+    z-index: 1000;
+}
+.black-nav a{
+    color: #b0b0b0;
+}
+.warp{
+    /* 黑白warp都生效 */
+    width: 1226px;
+    margin: 0 auto;
+}
+.black-nav .warp .black-left{
+    float:left;
+}
+.black-nav .warp .black-right{
+    float:right;
+}
+.black-nav .warp li span{
+    color: #424242;
+    margin: 0 3.6px;
+}
+.black-nav .warp li{
+    float: left;
+    /* 如果是right购物车会变成第一个，即从右边开始对齐 */
+    position: relative;
+    /* 加定位 */
+}
+.download{
+    width: 124px;
+    height: 0px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px #aaa;
+    position: absolute;
+    top:40px;
+    left: 50%;
+    margin-left: -68px;
+    overflow: hidden;
+    z-index: 1001;
+}
+.download img{
+    width: 90px;
+    margin: 18px auto 0;
+}
+.download p{
+    color: #333;
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: -8px;
+}
+.black-left li:hover>.download{
+    height: 148px;
+}
+.stri{
+    /* 箭头 */
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid #fff;
+    border-left: 8px solid transparent;
+    /* 这个是透明的 */
+    border-right: 8px solid transparent;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -15px;
+    display: none;
+}
+.black-left>li:hover>.stri{
+    display: block;
+}
+.cart{
+    width: 120px;
+    height: 40px;
+    background-color: #424242;
+    margin-left: 25px;
+}
+.cart:hover{
+    background-color: white;
+
+}
+.cart:hover>a{
+    color: #ff6700;
+}
+.cart i{
+    font-style: normal;
+}
+.cart-list{
+    width: 260px;
+    height: 0px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0,0,0.15);
+    position: absolute;
+    top:40px;
+    left: -50%;
+    overflow: hidden;
+    z-index: 1001;
+}
+.black-right li:hover>.cart-list{
+    height: 100px;
+}
+.black-left a:hover{
+    color: #ff6700;
+}
+/* 黑色导航end */
+
+
+/* 白色导航开始 */
+.white-nav{
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    position: relative;
+}
+.logo{
+    float: left;
+    width: 55px;
+    height: 55px;
+    margin-top: 22px;
+    overflow: hidden;
+}
+.logo>img{
+    width: 100%;
+    height: 100%;
+}
+.nav-bar{
+    float: left;
+    width: 850px;
+    height: 100px;
+    line-height: 100px;
+}
+.nav-bar li{
+    float: left;
+}
+.nav-bar li a{
+    float: left;
+    color: #333;
+    padding: 0 10px;
+}
+.nav-bar li a:hover{
+    color: #ff6700;
+}
+.search{
+    width: 296px;
+    height: 100px;
+    float: right;
+    line-height: 100px;
+}
+.search input{
+    width: 244px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    float: left;
+    box-sizing: border-box;
+    margin-top: 25px;
+    border-right: 0;
+    padding-left: 10px;
+    outline: none;
+    /* 没有选中的黑色边框 */
+}
+.search button{
+    width: 52px;
+    height: 50px;
+    float: right;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    margin-top: 25px;
+}
+.search button:hover{
+    background-color: #ff6700;
+    color: white;
+}
+
+.nav-bar-list{
+    background-color: white;
+    width: 100%;
+    height: 229px;
+    border-top:1px solid #eee ;
+    box-shadow: 0 3px 4px rgba(0, 0,0,0.1);
+    position: absolute;
+    left: 0;
+    top: 100px;
+    display: none;
+    z-index: 1000;
+}
+.nav-bar li:hover .nav-bar-list {
+    display: block;
+    z-index: 1001;
+    }
+.first{
+    padding-left: 85px;
+}
+.nav-bar-list li{
+    line-height: normal;
+}
+.nav-bar-list .name{
+ font-size: 12px;
+ color: #333;
+
+}
+.nav-bar-list .price{
+    font-size: 12px;
+    color: #ff6700;
+}
+.nav-bar-list .img-box>img{
+    border-right: 2px solid #eee;
+    height: 100px;
+    margin-top: 40px;
+}
+/* 白色导航结束 */
+/* 内容第一部分的大盒子 */
+.first-cart{
+    margin: 0 auto;
+    width: 1226px;
+    height: 670px;
+    background-color: #fff;
+}
+/* Banner start */
+.banner{
+    width: 100%;
+    height: 460px;
+}
+.banner-img{
+    width: 100%;
+}
+.banner>.warp{
+    position: relative;
+}
+.slide{
+    width: 234px;
+    height: 460px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(105, 101,101,0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+.slide>ul>li{
+    height: 42px;
+    line-height: 42px;
+    text-align: left;
+    padding-left: 30px;
+}
+.slide>ul>li>a{
+    color: #fff;
+}
+.slide i{
+    float: right;
+    padding-right: 30px;
+}
+.slide>ul>li:hover{
+    background-color: #ff6700;
+}
+.slide-list{
+    height: 460px;
+    width: 496px;
+    background-color: #fff;
+    border-left: 0;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 8px 16px rgba(0, 0,0,0.18);
+    position: absolute;
+    top: 0;
+    left: 234px;
+    box-sizing: border-box;
+    display: none;
+}
+.slide-list ul{
+    width: 100%;
+}
+.slide-list ul li{
+    width: 240px;
+    height: 76px;
+    float: left;
+    padding: 30px 0 18px 20px;
+    box-sizing: border-box;
+    line-height: 76px;
+}
+.slide-list img{
+    width: 50px;
+    margin-right: 10px;
+}
+.slide-list span{
+    color: #333;
+    position: relative;
+    top: -20px;
+    /* padding-bottom: 7px; */
+    font-size: 14px;
+    font-weight: 350;
+}
+.slide li:hover .slide-list{
+    display: block;
+}
+/* Banner end */
+.home-hero{
+    width: 100%;
+    height: 170px;
+    background-color: #fff;
+    margin-top: 14px;
+}
+.home-hero .span4{
+    width: 234px;
+    height: 170px;
+    float: left;
+    min-height: 1px;
+    background-color: #5f5750;
+}
+.span4-cart{
+    
+    margin: 0;
+    padding: 3px;
+    list-style-type: none;
+    font-size: 12px;
+    text-align: center;
+}
+.span4-cart li{
+    position: relative;
+    float: left;
+    width: 70px;
+    height: 82px;
+    padding: 0 3px;
+}
+.span4-cart li:hover{
+    background-color: #534b43;
+}
+.span4-cart li a{ 
+    width: 70px;
+    height: 64px;
+} 
+.span4-cart li a img{
+    width: 28px;
+    height: 28px;
+    padding-top: 18px;
+}
+.span4-cart p{
+    padding-top: 2px;
+    font-size: 10px;
+    color: #fff;
+}
+.span5{
+    float: left;
+    margin-left: 14px;
+    width: 978px;
+    height: 170px;
+    background-color: #fff;
+}
+.span5 li{
+   float: left; 
+   width: 317px;
+   height: 170px;
+
+}
+.span5 li img{
+    width: 100%;
+}
+.span5-cart-two{
+    padding-left: 13.5px;
+    padding-right: 13.5px;
+}
+/* page-mian开始 */
+.home-banner-box{
+    width: 1226px;
+    height: 120px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+.home-banner-box img{
+    width: 100%;
+    height: 120px;
+}
+.page-main-1{
+    width: 1226px;
+    height: 686px;
+    display: block;
+}
+.box-hd{
+    margin-top: 20px;
+    position: relative;
+    height: 58px;
+    line-height: 58px;
+}
+.box-bd{
+    width: 1226px;
+    height: 628px;
+}
+.box-hd .title{
+    float: left;
+    margin: 0;
+    color: #333;
+    font-weight: 200;
+}
+.span6{
+    float: left;
+    width: 234px;
+    height: 614px;
+}
+.list-left img{
+    width: 234px;
+    height: 614px;
+}
+.span7{
+    float: left;
+    margin-left: 14px;
+    width: 978px;
+    height: 614px;
+}
+.list-right{
+    margin-left: -14px;
+    width: 992px;
+    height: 614px;
+}
+.list-right .right-item{
+    position: relative;
+    float: left;
+    background-color: #fff;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    width: 234px;
+    height: 300px;
+}
+.right-item img{
+    width: 170px;
+}
+.page-main li:hover{
+    transform: translateY(-3px);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+.page-name{
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+.page-price{
+    text-align: center;
+    font-size: 14px;
+    color: rgb(255, 103, 0);
+}
+.desc{
+    margin: 0 10px 10px;
+    overflow: hidden;
+    color: rgb(176, 176, 176);
+    height: 18px;
+    font-size: 12px;
+}
+/* 页脚开始 */
+.footer-service{
+    padding: 27px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.footer-ul1{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.footer-ul1 li{
+    width: 19.8%;
+    border-right: 1px solid #e0e0e0;
+    font-size: 16px;
+    float: left;
+}
+.footer-ul1 li:last-child{
+    border-right: none;
+}
+.footer-ul1 span{
+    color: #757575;
+}
+.footer{
+    margin-top: 20px;
+    background-color: #fff;
+}
+.footer-link{
+    width: 100%;
+    height: 180px;
+    padding: 40px;
+}
+.footer-link ul{
+    margin-left: -10px;
+    float: left;
+    width: 20%;
+}
+.footer-link li:first-child{
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+.footer-link a{
+    color: #7e7e7e;
+    font-size: 12px;
+}
+.footer-link .link1{
+    color: #333;
+   font-size: 15px;
+}
+.footer li a:hover{
+    color: #ff6700;
+}
+.footer-ul1 span:hover{
+    color: #333;
+}
+.dots {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 2;
+    display: flex;       
+    flex-direction: row; 
+    gap: 8px;            
+}
+
+.dots li {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(46, 46, 46, 0.5); 
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dots li:hover {
+    background-color: white; 
+    transform: scale(1.4); 
+}
+
+.active {
+    background-color: white !important; 
+    transform: scale(1.4);   
+}
+.search-box{
+    display: none;
+   position: absolute;
+    width: 244px;
+    height: 200px;
+    float: right;
+    background-color: #fff;
+    margin-left:930px ;
+    margin-top: 75px;
+    z-index: 1006;
+}
+/* .search-box ul{
+   
+    float: left;
+    width: 244px;
+    height: 200px;
+} */
+.search-box li{
+    padding-left: 10px;
+    height: 40px;
+    
+}
+.search-box a{
+    padding-top: 7.5px;
+    font-size: 15px;
+    float: left;
+    color: #525151;
+}
+.search-box li:hover{
+   background-color: #b0aeae;
+   color: #f1efef;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 80px;
+    width: 50px;
+    height: 50px;
+    background: #f1f1f1;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+  
+  /* 悬停动效 */
+  .back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+  
+ 
+  .back-to-top:hover i{
+    transform: translateY(-5px);
+  }
+  
+  .back-to-top i{
+    margin-top: 10px;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+  }
+  .dh{
+    position: fixed;
+    right: 30px;
+    bottom: 250px;
+    width: 50px;
+    height: px;
+    background: #f1f1f1;
+   border: 1px solid #e0e0e0;
+    gap: 20px;
+    display: none;
+  }
+  .dh div{
+    display: flex;
+    width: 50px;
+    height: 70px;
+    border-bottom:1px solid #e0e0e0 ;
+    box-sizing: border-box;
+    align-items: center;
+   justify-content: center;
+  }
+  .dh div:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
